@@ -36,44 +36,46 @@ function Login() {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-100">
-      <div className="mt-16 p-8 bg-white rounded shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center">Login</h2>
-        <div className="text-center mb-4">
+    <div className="flex flex-col items-center min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-100">
+      <div className="mt-24 p-10 bg-white/90 rounded-3xl shadow-2xl w-full max-w-lg border border-pink-100">
+        <h2 className="text-3xl font-extrabold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-pink-500">
+          Login
+        </h2>
+        <div className="text-center mb-6">
           <span className="text-gray-600">Don't have an account? </span>
-          <Link to="/form" className="text-blue-600 font-semibold hover:underline">
+          <Link to="/form" className="text-pink-600 font-semibold hover:underline">
             Register
           </Link>
         </div>
-        <form className="space-y-5" onSubmit={handleSubmit}>
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
-            <label className="block font-semibold mb-1">Username or Email</label>
+            <label className="block font-semibold mb-2 text-blue-700">Username or Email</label>
             <input
               type="text"
               name="usernameOrEmail"
               value={formData.usernameOrEmail}
               onChange={handleChange}
-              className="w-full p-2 border rounded border-gray-300"
+              className="w-full p-3 border-2 rounded-xl bg-blue-50 focus:bg-white focus:border-pink-400 focus:ring-2 focus:ring-pink-100 transition"
               placeholder="Enter your username or email"
               autoComplete="username"
             />
           </div>
           <div>
-            <label className="block font-semibold mb-1">Password</label>
+            <label className="block font-semibold mb-2 text-blue-700">Password</label>
             <input
               type="password"
               name="password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full p-2 border rounded border-gray-300"
+              className="w-full p-3 border-2 rounded-xl bg-blue-50 focus:bg-white focus:border-pink-400 focus:ring-2 focus:ring-pink-100 transition"
               placeholder="Enter your password"
               autoComplete="current-password"
             />
           </div>
-          {error && <p className="text-red-500 text-xs">{error}</p>}
+          {error && <p className="text-red-500 text-sm text-center">{error}</p>}
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700 transition"
+            className="w-full bg-gradient-to-r from-blue-600 to-pink-500 text-white py-3 rounded-xl font-bold shadow-lg hover:scale-105 transition-transform"
           >
             Login
           </button>
