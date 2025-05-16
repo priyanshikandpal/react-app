@@ -90,7 +90,6 @@ function UserForm() {
         alert(result.message);
         setFormData(initialFormData);
         setTouched({});
-      
         navigate("/login");
       } catch (error) {
         alert("Submission failed. Please try again.");
@@ -99,21 +98,23 @@ function UserForm() {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-gray-100">
-      <div className="mt-16 p-8 bg-white rounded shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center">User Registration</h2>
-        <form onSubmit={handleSubmit} className="space-y-5">
+    <div className="flex flex-col items-center min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-100">
+      <div className="mt-20 p-10 bg-white/90 rounded-3xl shadow-2xl w-full max-w-lg border border-pink-100">
+        <h2 className="text-3xl font-extrabold mb-8 text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-pink-500">
+          User Registration
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-6">
           {/* Name */}
           <div>
-            <label className="block font-semibold mb-1">Name</label>
+            <label className="block font-semibold mb-2 text-blue-700">Name</label>
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={`w-full p-2 border rounded ${
-                errors.name && touched.name ? "border-red-500" : "border-gray-300"
+              className={`w-full p-3 border-2 rounded-xl bg-blue-50 focus:bg-white focus:border-pink-400 focus:ring-2 focus:ring-pink-100 transition ${
+                errors.name && touched.name ? "border-red-500" : "border-blue-200"
               }`}
               placeholder="Enter your name"
             />
@@ -123,15 +124,15 @@ function UserForm() {
           </div>
           {/* Username */}
           <div>
-            <label className="block font-semibold mb-1">Username</label>
+            <label className="block font-semibold mb-2 text-blue-700">Username</label>
             <input
               type="text"
               name="username"
               value={formData.username}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={`w-full p-2 border rounded ${
-                errors.username && touched.username ? "border-red-500" : "border-gray-300"
+              className={`w-full p-3 border-2 rounded-xl bg-blue-50 focus:bg-white focus:border-pink-400 focus:ring-2 focus:ring-pink-100 transition ${
+                errors.username && touched.username ? "border-red-500" : "border-blue-200"
               }`}
               placeholder="Choose a username"
             />
@@ -141,15 +142,15 @@ function UserForm() {
           </div>
           {/* Email */}
           <div>
-            <label className="block font-semibold mb-1">Email</label>
+            <label className="block font-semibold mb-2 text-blue-700">Email</label>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={`w-full p-2 border rounded ${
-                errors.email && touched.email ? "border-red-500" : "border-gray-300"
+              className={`w-full p-3 border-2 rounded-xl bg-blue-50 focus:bg-white focus:border-pink-400 focus:ring-2 focus:ring-pink-100 transition ${
+                errors.email && touched.email ? "border-red-500" : "border-blue-200"
               }`}
               placeholder="Enter your email"
             />
@@ -159,15 +160,15 @@ function UserForm() {
           </div>
           {/* Password */}
           <div>
-            <label className="block font-semibold mb-1">Password</label>
+            <label className="block font-semibold mb-2 text-blue-700">Password</label>
             <input
               type="password"
               name="password"
               value={formData.password}
               onChange={handleChange}
               onBlur={handleBlur}
-              className={`w-full p-2 border rounded ${
-                errors.password && touched.password ? "border-red-500" : "border-gray-300"
+              className={`w-full p-3 border-2 rounded-xl bg-blue-50 focus:bg-white focus:border-pink-400 focus:ring-2 focus:ring-pink-100 transition ${
+                errors.password && touched.password ? "border-red-500" : "border-blue-200"
               }`}
               placeholder="Create a strong password"
             />
@@ -177,14 +178,14 @@ function UserForm() {
           </div>
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded font-semibold hover:bg-blue-700 transition"
+            className="w-full bg-gradient-to-r from-blue-600 to-pink-500 text-white py-3 rounded-xl font-bold shadow-lg hover:scale-105 transition-transform"
           >
             Submit
           </button>
         </form>
-        <div className="mt-4 text-center">
+        <div className="mt-6 text-center">
           <span className="text-gray-600">Already a user? </span>
-          <Link to="/login" className="text-blue-600 font-semibold hover:underline">
+          <Link to="/login" className="text-pink-600 font-semibold hover:underline">
             Login
           </Link>
         </div>
